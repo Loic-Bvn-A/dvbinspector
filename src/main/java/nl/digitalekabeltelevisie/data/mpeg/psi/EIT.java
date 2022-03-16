@@ -50,6 +50,7 @@ import java.util.stream.Collectors;
 import javax.swing.table.TableModel;
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.commons.lang3.ArrayUtils;
 
 import nl.digitalekabeltelevisie.controller.KVP;
@@ -72,6 +73,8 @@ import nl.digitalekabeltelevisie.util.tablemodel.TableHeaderBuilder;
  * @author Eric
  *
  */
+// parentTransportStream and parentPID to shortened the export
+@JsonIgnoreProperties({"psi","parentTransportStream","parentPID"})
 public class EIT extends AbstractPSITabel{
 
 	private static final String EVENT_GRID_TITLE = "Grid";

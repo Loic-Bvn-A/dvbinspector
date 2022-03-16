@@ -99,6 +99,7 @@ import nl.digitalekabeltelevisie.util.tablemodel.TableHeaderBuilder;
  * TransportStream is responsible for parsing a file containing a transport stream, dividing it into 188 byte {@link TSPackets}, and handing them over to the correct PID.
  *
  */
+@JsonIgnoreProperties({"psi","pids"})
 public class TransportStream implements TreeNode{
 	
 	public enum ComponentType{
@@ -1166,6 +1167,11 @@ public class TransportStream implements TreeNode{
 			}
 		}
 		return false;
+	}
+
+
+	public long getBitRateTDT() {
+			return bitRateTDT;
 	}
 	
 }

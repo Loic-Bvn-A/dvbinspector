@@ -25,6 +25,8 @@ package nl.digitalekabeltelevisie.data.mpeg.pes.video26x;
 
 import java.util.logging.Logger;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import nl.digitalekabeltelevisie.controller.TreeNode;
 import nl.digitalekabeltelevisie.util.BitSource;
 
@@ -32,6 +34,7 @@ import nl.digitalekabeltelevisie.util.BitSource;
  * @author Eric
  *
  */
+@JsonIgnoreProperties({"bytes","rbsp_byte"})
 public abstract class AbstractNALUnit  implements TreeNode{
 
 	protected static final Logger logger = Logger.getLogger(AbstractNALUnit.class.getName());

@@ -34,6 +34,8 @@ import java.util.Formatter;
 
 import javax.swing.tree.DefaultMutableTreeNode;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import nl.digitalekabeltelevisie.controller.KVP;
 import nl.digitalekabeltelevisie.controller.TreeNode;
 import nl.digitalekabeltelevisie.data.mpeg.CRCcheck;
@@ -42,6 +44,9 @@ import nl.digitalekabeltelevisie.data.mpeg.PSI;
 import nl.digitalekabeltelevisie.data.mpeg.PsiSectionData;
 import nl.digitalekabeltelevisie.data.mpeg.TransportStream;
 import nl.digitalekabeltelevisie.util.Utils;
+// psi there to make the export possible
+// parentTransportStream and parentPID to shortened the export
+@JsonIgnoreProperties({"psi","parentTransportStream","parentPID"})
 
 public class TableSection implements TreeNode{
 
